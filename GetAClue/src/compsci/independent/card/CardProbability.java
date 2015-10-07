@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class CardProbability{
 
-	ArrayList<Card> cards = new ArrayList<Card>();
+	public ArrayList<Card> cards = new ArrayList<Card>();
 	
 	public CardProbability(Card c1, Card c2, Card c3){
 		cards.add(c1);
