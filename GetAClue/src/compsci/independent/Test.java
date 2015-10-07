@@ -7,8 +7,12 @@ import compsci.independent.card.CardProbability;
 
 public class Test {
 	public static void main(String[] args){
+		boolean keepGuessing=true;
 		Player testPlayer=new Player(3);
 		Scanner scanner = new Scanner(System.in);
+		while(keepGuessing){
+		
+		
 		System.out.print("Enter guessed card 1:\t");
 		Card g1=new Card(scanner.nextInt());
 		scanner.nextLine();
@@ -18,8 +22,10 @@ public class Test {
 		System.out.print("Enter guessed card 3:\t");
 		Card g3=new Card(scanner.nextInt());
 		scanner.nextLine();
-		
 		testPlayer.cards.add(new CardProbability(g1, g2, g3));
+		System.out.println(testPlayer.analyzeCardProbabilities().values());
+		}	
+		
 		
 	}
 	
