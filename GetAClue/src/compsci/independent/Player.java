@@ -10,8 +10,6 @@ public class Player {
 	
 	ArrayList<Card> cards = new ArrayList<Card>();
 	
-	//Comment 3
-	
 	public Player(int size){
 		handSize = size;
 	}
