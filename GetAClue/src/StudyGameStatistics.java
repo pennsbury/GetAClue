@@ -17,14 +17,17 @@ public class StudyGameStatistics {
 	
 	public static void main(String[] args) {
 		int yes = 0, no = 0;
+		int trialAmount = 0;
+		long startTime = System.currentTimeMillis();
 		
-		while(true){
+		while(trialAmount < 3000){
+			trialAmount++;
 			
 			ArrayList<CardProbability> ps = new ArrayList<CardProbability>();
 			ArrayList<Card> realHand = new ArrayList<Card>(); 
 			ClueDeck deck = new ClueDeck();
 			
-			for (int i = 0; i < 10; i++){
+			for (int i = 0; i < 4; i++){
 				realHand.add(new Card(deck.drawCard()));
 			}
 			
@@ -121,6 +124,8 @@ public class StudyGameStatistics {
 			
 	//		System.out.println(ps);
 		}
+		
+		System.out.println("Time: " + (System.currentTimeMillis() - startTime) + "ms");
 		
 	}
 	
