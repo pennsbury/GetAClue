@@ -7,7 +7,7 @@ import compsci.independent.card.Card;
 import compsci.independent.card.CardProbability;
 import compsci.independent.card.CardTypes;
 import compsci.independent.deck.ClueDeck;
-
+//THis class is dumb
 
 public class StudyGameStatistics {
 
