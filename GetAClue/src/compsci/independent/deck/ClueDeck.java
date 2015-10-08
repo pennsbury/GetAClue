@@ -16,7 +16,7 @@ public class ClueDeck {
 		}
 	}
 	
-	public int drawCard(){
+	public int drawCard(){		
 		return is.remove(random.nextInt(is.size()));
 	}
 }

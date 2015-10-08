@@ -20,13 +20,8 @@ public class Test {
 				new Card(CardTypes.Rooms.BALL),
 				new Card(CardTypes.Weapons.PIPE)));
 		
-		a.add(new CardProbability(
-				new Card(CardTypes.People.MUSTARD),
-				new Card(CardTypes.Rooms.CONSERV),
-				new Card(CardTypes.Weapons.REVOLVER)));
-		
-		Simulation sim = new Simulation(a);
-		sim.runSim(3000);
+		Simulation sim = new Simulation(a, 3, new Card(CardTypes.People.MUSTARD));
+		sim.runSim(6000);
 		
 	}
 

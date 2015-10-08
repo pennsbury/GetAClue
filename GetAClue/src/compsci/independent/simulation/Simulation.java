@@ -9,9 +9,13 @@ import compsci.independent.deck.ClueDeck;
 public class Simulation {
 
 	ArrayList<CardProbability> templates;
+	Card lookingFor;
+	int handSize;
 	
-	public Simulation(ArrayList<CardProbability> ps){
+	public Simulation(ArrayList<CardProbability> ps, int h, Card l){
 		templates = ps;
+		lookingFor = l;
+		handSize = h;
 	}
 	
 	public void runSim(int trials){
@@ -25,7 +29,7 @@ public class Simulation {
 				realHand = new ArrayList<Card>(); 
 				ClueDeck deck = new ClueDeck();
 				
-				for (int i = 0; i < 4; i++){
+				for (int i = 0; i < handSize; i++){
 					realHand.add(new Card(deck.drawCard()));
 				}
 				
@@ -44,7 +48,7 @@ public class Simulation {
 			}
 			
 			for (Card c : realHand){
-				if (c.equals(new Card(0))){
+				if (c.equals(lookingFor)){
 					yes++;
 					break;
 				}
