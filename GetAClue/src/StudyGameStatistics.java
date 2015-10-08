@@ -7,13 +7,14 @@ import compsci.independent.card.Card;
 import compsci.independent.card.CardProbability;
 import compsci.independent.card.CardTypes;
 import compsci.independent.deck.ClueDeck;
-//THis class is dumb
+
 
 public class StudyGameStatistics {
+	//DOESNT WORK PROPERLY
 
 	static Random random = new Random(System.nanoTime());
 	
-	static int trialSetting = 2;
+	static int trialSetting = 4;
 	
 	public static void main(String[] args) {
 		int yes = 0, no = 0;
