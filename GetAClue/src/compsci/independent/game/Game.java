@@ -24,8 +24,14 @@ public class Game {
 				players[i]=new Player(name, handSize);
 			}
 			
+			int g1, g2, g3;
 			while(true){
-				System.out.print("What was the value of guessed card ");
+				System.out.print("What was the value of guessed Person");
+				g1=scanner.nextInt();
+				System.out.print("What was the value of guessed Weapon");
+				g2=scanner.nextInt();
+				System.out.print("What was the value of guessed Room");
+				g3=scanner.nextInt();
 			}
 			
 			
