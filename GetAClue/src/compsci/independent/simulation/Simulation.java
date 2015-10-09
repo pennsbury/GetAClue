@@ -1,25 +1,26 @@
 package compsci.independent.simulation;
 
+import java.text.MessageFormat;
 import java.util.ArrayList;
 
 import compsci.independent.card.Card;
 import compsci.independent.card.CardProbability;
+import compsci.independent.card.CardTypes;
 import compsci.independent.deck.ClueDeck;
 
 public class Simulation {
 
 	ArrayList<CardProbability> templates;
-	Card lookingFor;
 	int handSize;
 	
-	public Simulation(ArrayList<CardProbability> ps, int h, Card l){
+	public Simulation(ArrayList<CardProbability> ps, int h){
 		templates = ps;
-		lookingFor = l;
 		handSize = h;
 	}
 	
-	public void runSim(int trials){
-		int yes = 0, total = 0;
+	public double[] runSim(int trials){
+		int total = 0;
+		int[] times = new int[21];
 		
 		for (int foo = 0; foo < trials; foo++){
 			ArrayList<Card> realHand;
@@ -47,15 +48,29 @@ public class Simulation {
 				break;
 			}
 			
-			for (Card c : realHand){
-				if (c.equals(lookingFor)){
-					yes++;
-					break;
+			for (int i = 0; i <= 20; i++){
+				for (Card c : realHand){
+					if (c.equals(new Card(i))){
+						times[i]++;
+						break;
+					}
 				}
 			}
 			total++;
 		}
 		
-		System.out.println("Yes: " + ((double) yes / total));
+		double[] probs = new double[21];
+		for (int i = 0; i <= 20; i++){
+			probs[i] = ((double) times[i])/total;
+		}
+		
+		for(int i = 0; i <= 20; i++){
+			System.out.println(((String) CardTypes.CardNameMap.get(i)) + ": \t" +
+					((((String) CardTypes.CardNameMap.get(i)).length() < 6)?"\t":"") +
+					MessageFormat.format("{0,number,#.#%}", probs[i]));
+		}
+		
+		return probs;
+		
 	}
 }
