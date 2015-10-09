@@ -17,14 +17,17 @@ public class Test {
 		a.add(new CardProbability(
 				new Card(CardTypes.People.MUSTARD),
 				new Card(CardTypes.Rooms.BALL),
-				new Card(CardTypes.Weapons.CANDLE)));
+				new Card(CardTypes.Weapons.PIPE)));
 		
 		a.add(new CardProbability(
-				new Card(CardTypes.People.SCARLET),
 				new Card(CardTypes.Weapons.CANDLE)));
 		
 		
-		Simulation sim = new Simulation(a, 3);
+		Simulation sim = new Simulation(a, 3, new int[] {
+				CardTypes.People.MUSTARD,
+				CardTypes.Weapons.PIPE
+				});
+		
 		sim.runSim(2000);
 		
 	}
