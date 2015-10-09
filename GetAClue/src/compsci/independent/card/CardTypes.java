@@ -13,18 +13,6 @@ public class CardTypes {
 		public static final int SCARLET = 4;
 		public static final int WHITE = 5;
 	}
-	
-    public static final Map<String, Integer> PeopleMap;
-    static
-    {
-    	PeopleMap = new HashMap<String, Integer>();
-    	PeopleMap.put("MUSTARD", 0);
-    	PeopleMap.put("PLUM", 1);
-    	PeopleMap.put("GREEN", 2);
-    	PeopleMap.put("PEACOCK", 3);
-    	PeopleMap.put("SCARLET", 4);
-    	PeopleMap.put("WHITE", 5);
-    }
 
 	public class Weapons {
 		public static final int KNIFE = 6;
@@ -34,18 +22,6 @@ public class CardTypes {
 		public static final int PIPE = 10;
 		public static final int WRENCH = 11;
 	}
-	
-    public static final Map<String, Integer> WeaponsMap;
-    static
-    {
-    	WeaponsMap = new HashMap<String, Integer>();
-    	WeaponsMap.put("KNIFE", 6);
-    	WeaponsMap.put("CANDLE", 7);
-    	WeaponsMap.put("REVOLVER", 8);
-    	WeaponsMap.put("ROPE", 9);
-    	WeaponsMap.put("PIPE", 10);
-    	WeaponsMap.put("WRENCH", 11);
-    }
 
 	public class Rooms {
 		public static final int HALL = 12;
@@ -59,18 +35,30 @@ public class CardTypes {
 		public static final int STUDY = 20;
 	}
 	
-    public static final Map<String, Integer> RoomsMap;
+    public static final Map<Integer, String> CardNameMap;
     static
     {
-    	RoomsMap = new HashMap<String, Integer>();
-    	RoomsMap.put("HALL", 12);
-    	RoomsMap.put("LOUNGE", 13);
-    	RoomsMap.put("DINING", 14);
-    	RoomsMap.put("KITCHEN", 15);
-    	RoomsMap.put("BALL", 16);
-    	RoomsMap.put("CONSERV", 17);
-    	RoomsMap.put("BILLARD", 18);
-    	RoomsMap.put("LIBRARY", 19);
-    	RoomsMap.put("STUDY", 20);
+    	CardNameMap = new HashMap<Integer, String>();
+    	CardNameMap.put(0, "MUSTARD");
+    	CardNameMap.put(1, "PLUM");
+    	CardNameMap.put(2, "GREEN");
+    	CardNameMap.put(3, "PEACOCK");
+    	CardNameMap.put(4, "SCARLET");
+    	CardNameMap.put(5, "WHITE");
+    	CardNameMap.put(6, "KNIFE");
+    	CardNameMap.put(7, "CANDLE");
+    	CardNameMap.put(8, "REVOLVER");
+    	CardNameMap.put(9, "ROPE");
+    	CardNameMap.put(10, "PIPE");
+    	CardNameMap.put(11, "WRENCH");
+    	CardNameMap.put(12, "HALL");
+    	CardNameMap.put(13, "LOUNGE");
+    	CardNameMap.put(14, "DINING");
+    	CardNameMap.put(15, "KITCHEN");
+    	CardNameMap.put(16, "BALL");
+    	CardNameMap.put(17, "CONSERV");
+    	CardNameMap.put(18, "BILLARD");
+    	CardNameMap.put(19, "LIBRARY");
+    	CardNameMap.put(20, "STUDY");
     }
 }

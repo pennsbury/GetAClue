@@ -12,7 +12,6 @@ public class Test {
 		ArrayList<CardProbability> a = new ArrayList<CardProbability>();
 		a.add(new CardProbability(
 				new Card(CardTypes.People.MUSTARD),
-				new Card(CardTypes.Rooms.BILLARD),
 				new Card(CardTypes.Weapons.KNIFE)));
 		
 		a.add(new CardProbability(
@@ -20,8 +19,16 @@ public class Test {
 				new Card(CardTypes.Rooms.BALL),
 				new Card(CardTypes.Weapons.PIPE)));
 		
-		Simulation sim = new Simulation(a, 3, new Card(CardTypes.People.MUSTARD));
-		sim.runSim(6000);
+		a.add(new CardProbability(
+				new Card(CardTypes.People.SCARLET),
+				new Card(CardTypes.Weapons.CANDLE)));
+		
+		a.add(new CardProbability(
+				new Card(CardTypes.People.GREEN),
+				new Card(CardTypes.Weapons.REVOLVER)));
+		
+		Simulation sim = new Simulation(a, 3);
+		sim.runSim(20000);
 		
 	}
 
