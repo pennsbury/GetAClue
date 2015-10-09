@@ -32,4 +32,8 @@ public class Player {
 		return probability;
 	}
 	
+	public void addCardProbability(CardProbability c){
+		cards.add(c);
+	}
+	
 }

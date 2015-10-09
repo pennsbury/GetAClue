@@ -30,4 +30,22 @@ public class CardProbability{
 		
 		return 0;
 	}
+	
+	public Card getCard(int i){
+		return cards.get(i);
+	}
+	
+	public boolean contains(Card check){
+		for (Card card : cards){
+			if (check.equals(card)){
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	public String toString(){
+		return cards.toString();
+	}
 }
