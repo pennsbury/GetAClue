@@ -12,10 +12,12 @@ public class Simulation {
 
 	ArrayList<CardProbability> templates;
 	int handSize;
+	int[] without;
 	
-	public Simulation(ArrayList<CardProbability> ps, int h){
+	public Simulation(ArrayList<CardProbability> ps, int h, int[] w){
 		templates = ps;
 		handSize = h;
+		without = w;
 	}
 	
 	public double[] runSim(int trials){
@@ -28,7 +30,7 @@ public class Simulation {
 			search:
 			while (true){
 				realHand = new ArrayList<Card>(); 
-				ClueDeck deck = new ClueDeck();
+				ClueDeck deck = new ClueDeck(without);
 				
 				for (int i = 0; i < handSize; i++){
 					realHand.add(new Card(deck.drawCard()));
