@@ -2,6 +2,7 @@ package compsci.independent.simulation;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import compsci.independent.card.Card;
 import compsci.independent.card.CardProbability;
@@ -20,7 +21,7 @@ public class Simulation {
 		without = w;
 	}
 	
-	public double[] runSim(int trials){
+	public HashMap<Integer, Double> runSim(int trials){
 		int total = 0;
 		int[] times = new int[21];
 		
@@ -61,15 +62,15 @@ public class Simulation {
 			total++;
 		}
 		
-		double[] probs = new double[21];
+		HashMap<Integer, Double> probs = new HashMap<Integer, Double>();
 		for (int i = 0; i <= 20; i++){
-			probs[i] = ((double) times[i])/total;
+			probs.put(i, ((double) times[i])/total);
 		}
 		
 		for(int i = 0; i <= 20; i++){
 			System.out.println(((String) CardTypes.CardNameMap.get(i)) + ": \t" +
 					((((String) CardTypes.CardNameMap.get(i)).length() < 6)?"\t":"") +
-					MessageFormat.format("{0,number,#.#%}", probs[i]));
+					MessageFormat.format("{0,number,#.#%}", probs.get(i)));
 		}
 		
 		return probs;

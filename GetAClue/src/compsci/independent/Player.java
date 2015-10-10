@@ -23,19 +23,24 @@ public class Player {
 		playerName=name;
 	}
 	
-	public HashMap<Integer, Double> analyzeCardProbabilities(){
-		HashMap<Integer, Double> probability = new HashMap<Integer, Double>();
-		Simulation sim = new Simulation(a, 3, new int[] {
-				CardTypes.People.MUSTARD,
-				CardTypes.Weapons.PIPE
-				});
+	public HashMap<Integer, Double> analyzeCardProbabilities(int[] removeFromDeck){	
+		Simulation sim = new Simulation(cards, handSize, removeFromDeck);
 		
-		
-		return probability;
+		return sim.runSim(3000);
 	}
 	
 	public void addCardProbability(CardProbability c){
 		cards.add(c);
 	}
+
+	public String getPlayerName() {
+		return playerName;
+	}
+
+	public int getHandSize() {
+		return handSize;
+	}
+	
+	
 	
 }

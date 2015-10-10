@@ -4,12 +4,23 @@ import compsci.independent.Player;
 import compsci.independent.card.Card;
 import compsci.independent.card.CardProbability;
 import compsci.independent.card.CardTypes;
+import compsci.independent.game.Game;
 import compsci.independent.simulation.Simulation;
 
 
 public class Test {
 
 	public static void main(String[] args) {
+		testGame();
+	}
+	
+	public static void testGame(){
+		Game g = new Game();
+		
+		g.runGame();
+	}
+	
+	public static void testStats(){
 		Player player = new Player("Joiquin", 3);
 		
 		
@@ -26,13 +37,7 @@ public class Test {
 				new Card(CardTypes.Weapons.CANDLE)));
 		
 		
-		Simulation sim = new Simulation(a, 3, new int[] {
-				CardTypes.People.MUSTARD,
-				CardTypes.Weapons.PIPE
-				});
-		
-		sim.runSim(2000);
-		
+		player.analyzeCardProbabilities(new int[] {});
 	}
 
 }

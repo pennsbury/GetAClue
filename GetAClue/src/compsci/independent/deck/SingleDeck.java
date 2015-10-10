@@ -26,14 +26,6 @@ public class SingleDeck {
 		}
 	}
 	
-	public SingleDeck(){
-		random = new Random(System.nanoTime());
-		
-		for (int i = 0; i <= 20; i++){
-			is.add(i);
-		}
-	}
-	
 	public int drawCard(){		
 		return is.remove(random.nextInt(is.size()));
 	}
