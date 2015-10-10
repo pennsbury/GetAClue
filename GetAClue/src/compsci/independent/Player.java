@@ -5,6 +5,8 @@ import java.util.HashMap;
 
 import compsci.independent.card.Card;
 import compsci.independent.card.CardProbability;
+import compsci.independent.card.CardTypes;
+import compsci.independent.simulation.Simulation;
 
 public class Player {
 	String playerName;
@@ -23,16 +25,11 @@ public class Player {
 	
 	public HashMap<Integer, Double> analyzeCardProbabilities(){
 		HashMap<Integer, Double> probability = new HashMap<Integer, Double>();
+		Simulation sim = new Simulation(a, 3, new int[] {
+				CardTypes.People.MUSTARD,
+				CardTypes.Weapons.PIPE
+				});
 		
-		for (int type = 0; type <= 20; type++){ //All different cards possible
-			double oneProb = 0;
-			for (CardProbability card : cards){
-				double oneCard = card.getCardProbability(new Card(type));
-				
-				oneProb += oneCard - oneCard*oneProb;
-			}
-			probability.put(type, oneProb);
-		}
 		
 		return probability;
 	}

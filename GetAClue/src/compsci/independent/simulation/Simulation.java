@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import compsci.independent.card.Card;
 import compsci.independent.card.CardProbability;
 import compsci.independent.card.CardTypes;
-import compsci.independent.deck.ClueDeck;
+import compsci.independent.deck.SingleDeck;
 
 public class Simulation {
 
@@ -30,7 +30,7 @@ public class Simulation {
 			search:
 			while (true){
 				realHand = new ArrayList<Card>(); 
-				ClueDeck deck = new ClueDeck(without);
+				SingleDeck deck = new SingleDeck(without);
 				
 				for (int i = 0; i < handSize; i++){
 					realHand.add(new Card(deck.drawCard()));

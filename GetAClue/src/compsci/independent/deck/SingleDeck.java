@@ -5,12 +5,12 @@ import java.util.Random;
 
 import compsci.independent.card.Card;
 
-public class ClueDeck {
+public class SingleDeck {
 	Random random;
 	
 	ArrayList<Integer> is = new ArrayList<Integer>();
 	
-	public ClueDeck(int[] without){
+	public SingleDeck(int[] without){
 		random = new Random(System.nanoTime());
 		
 		ArrayList<Integer> w = new ArrayList<Integer>();
@@ -26,7 +26,7 @@ public class ClueDeck {
 		}
 	}
 	
-	public ClueDeck(){
+	public SingleDeck(){
 		random = new Random(System.nanoTime());
 		
 		for (int i = 0; i <= 20; i++){
